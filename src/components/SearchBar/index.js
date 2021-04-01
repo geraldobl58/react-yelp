@@ -1,8 +1,8 @@
 import React from 'react';
 
-import styles from './Search.module.css';
+import styles from './SearchBar.module.css';
 
-export function Search() {
+export function SearchBar() {
   return (
     <div>
       <div className="field has-addons">

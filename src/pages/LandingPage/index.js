@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { TopNav } from '../../components/TopNav';
-import { Search } from '../../components/Search';
+import { SearchBar } from '../../components/SearchBar';
 import { SearchSuggestions } from '../../components/SearchSuggestions';
 
 import styles from './LandingPage.module.css';
@@ -14,7 +14,7 @@ export function LandingPage() {
       <div className={styles['search-area']}>
         <TopNav />
         <img className={styles.logo} src={logoImg} alt="Logo" />
-        <Search />
+        <SearchBar />
         <SearchSuggestions />
       </div>
     </div>
