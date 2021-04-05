@@ -1,13 +1,14 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 import styles from './SearchResultsSummary.module.css';
 
-export function SearchResultsSummary() {
+export function SearchResultsSummary({ term, location }) {
   return (
     <div className={styles.container}>
       <div className={styles['search-summary']}>
         <h1 className="subtitle">
-          <strong>hamburgers</strong> vila rica
+          <strong>{term}</strong> {location}
         </h1>
         <p>Mostrando 1-20 de 534 resultados</p>
       </div>

@@ -1,20 +1,21 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 
 import styles from './SearchBar.module.css';
 
-export function SearchBar({ small, terms, locations, search }) {
-  const [term, setTerms] = useState(terms || '');
-  const [location, setLocation] = useState(locations || '');
+export function SearchBar(props) {
+  const [term, setTerm] = useState(props.term || '');
+  const [location, setLocation] = useState(props.location || '');
 
-  const sizeClass = small ? '' : 'is-medium ';
+  const sizeClass = props.small ? '' : 'is-medium ';
 
   function handleOnSubmit(event) {
     event.preventDefault();
     console.log(term, location);
 
-    if (search && typeof search === 'function') {
-      search(term, location);
+    if (props.search && typeof props.search === 'function') {
+      props.search(term, location);
     }
   }
 
@@ -31,7 +32,8 @@ export function SearchBar({ small, terms, locations, search }) {
             type="text"
             className={`input ${sizeClass} ${styles['input-control']}`}
             placeholder="Hamburgers, Barbeiros, Spas"
-            onChange={(event) => setTerms(event.target.value)}
+            value={term}
+            onChange={(event) => setTerm(event.target.value)}
           />
         </p>
         <span className="control">
@@ -42,6 +44,7 @@ export function SearchBar({ small, terms, locations, search }) {
             type="text"
             className={`input ${sizeClass} ${styles['input-control']}`}
             placeholder="Lugar"
+            value={location}
             onChange={(event) => setLocation(event.target.value)}
           />
         </p>
