@@ -6,7 +6,7 @@ export function TopNav() {
   return (
     <div className={styles['top-nav']}>
       <div className={styles.left}>
-        <span>Escreva uma crítica</span>
+        <span>Escreva uma crítica/elogios</span>
         <span>Eventos</span>
       </div>
       <div className={styles.right}>

@@ -1,13 +1,17 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-export function SubNavItem({ label, icon }) {
+import styles from './SubNavItem.module.css';
+
+export function SubNavItem({ label, icon, showRightBorder }) {
+  const borderClass = showRightBorder ? styles['right-border'] : '';
+
   return (
     <div className="dropdown is-hoverable">
       <div className="dropdown-trigger">
-        <button
+        <div
+          className={`${styles['sub-nav-item']} ${borderClass}`}
           type="button"
-          className="button"
           aria-haspopup="true"
           aria-controls="dropdown-menu4"
         >
@@ -18,7 +22,7 @@ export function SubNavItem({ label, icon }) {
           <span className="icon is-small">
             <i className="fas fa-angle-down" aria-hidden="true" />
           </span>
-        </button>
+        </div>
       </div>
       <div className="dropdown-menu" id="dropdown-menu4" role="menu">
         <div className="dropdown-content">
