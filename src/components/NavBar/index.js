@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { SearchBar } from '../SearchBar';
 
@@ -9,7 +10,9 @@ import styles from './NavBar.module.css';
 export function NavBar() {
   return (
     <div className={styles['nav-bar']}>
-      <img className={styles.logo} src={logoImg} alt="Logo" />
+      <Link to="/">
+        <img className={styles.logo} src={logoImg} alt="Logo" />
+      </Link>
       <SearchBar small />
       <button type="button" className={`button ${styles['nav-button']}`}>
         Login
