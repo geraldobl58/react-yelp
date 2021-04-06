@@ -12,7 +12,6 @@ export function SearchBar(props) {
 
   function handleOnSubmit(event) {
     event.preventDefault();
-    console.log(term, location);
 
     if (props.search && typeof props.search === 'function') {
       props.search(term, location);
