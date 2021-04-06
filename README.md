@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+## Frontend Reactjs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto destina-se exclusivamente a fins educacionais.
 
-## Available Scripts
+Não se destina a criar nenhum tipo de concorrente do Yelp , mas aprender conceitos avançados no desenvolvimento de front-end.
 
-In the project directory, you can run:
+## Requisitos
 
-### `yarn start`
+```
+Nodejs >= 10
+```
+## Preview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img src="./docs/assets/preview-desktop.gif" width="100%">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+O aplicativo usa dados reais aproveitando a API Yelp Fusion .
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Como Iniciar?
 
-### `yarn build`
+1.  **Faça o clone do repositório.**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```
+      git clone https://github.com/geraldobl58/react-yelp.git
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2.  **Instalação das dependências**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   execute na pasta do projeto o seguinte comando:
 
-### `yarn eject`
+    ```npm install ou yarn
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    após a instalação execute o seguinte comando.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```npm run start ou yarn start
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3.  **Verificando no navegador**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    O projeto vai executar no seguinte endereço: `http://localhost:3000`
 
-## Learn More
+## Techs
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ - [x] React
+ - [x] Bulma
+ - [x] Dotenv
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Atenção
 
-### Code Splitting
+Este aplicativo usa o CORS Anywhere porque a API REST do Yelp Fusion é destinada à comunicação de servidor para servidor e não oferece suporte a CORS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Diretórios
 
-### Analyzing the Bundle Size
+Estrutura do projeto.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    .
+    ├── node_modules
+    ├── src
+    ├──────── assets
+    ├──────── components
+    ├──────── hooks
+    ├──────── pages
+    ├──────── services
+    ├── .gitignore
+    ├── .prettierrc
+    ├── .editorconfig
+    ├── .eslint.js
+    ├── package.json
+    └── README.md
 
-### Making a Progressive Web App
+1.  **`/node_modules`**: Este diretório contém todos os módulos de código dos quais seu projeto depende (pacotes npm) são instalados automaticamente.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2.  **`/src`**: Este diretório conterá todo o código relacionado ao que você verá no front-end do site (o que você vê no navegador), como o cabeçalho do site ou um modelo de página. `src` é uma convenção para "código fonte ".
 
-### Advanced Configuration
+3.  **`.gitignore`**: Este arquivo informa ao git quais arquivos ele não deve rastrear / não manter um histórico de versão.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4.  **`.prettierrc`**: Este é um arquivo de configuração para Prettier é uma ferramenta para ajudar a manter a formatação do código consistente e para manter um padrão. [Prettier](https://prettier.io/).
 
-### Deployment
+5.  **`.eslint.json`**: ESLint é uma ferramenta de análise de código estática para identificar padrões problemáticos encontrados no código JavaScript. [Eslint](https://eslint.org/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+6.  **`.editorconfig`**: O EditorConfig ajuda a manter estilos de codificação consistentes para vários desenvolvedores que trabalham no mesmo projeto em vários editores e IDEs. [Editorconfig](https://editorconfig.org/)
 
-### `yarn build` fails to minify
+7. **`package-lock.json`** Este é um arquivo gerado automaticamente com base nas versões exatas das dependências do npm que foram instaladas para o seu projeto. ** (Você não altera este arquivo diretamente)**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+8. **`package.json`**: Um arquivo é executado para projetos Node.js, que inclui itens como metadados (nome, autor do projeto etc.). Este arquivo é como o npm sabe quais pacotes instalar para o seu projeto.
