@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 import Rating from 'react-rating';
 
 import styles from './BusinessRatting.module.css';
 
-export function BusinessRatting() {
+export function BusinessRatting({ reviewCount, rating }) {
   return (
     <div className={styles.rating}>
       <Rating
@@ -12,9 +13,9 @@ export function BusinessRatting() {
         fullSymbol="fas fa-star"
         fractions={2}
         readonly
-        initialRating={3}
+        initialRating={rating}
       />
-      <p>634 Visitas</p>
+      <p>{reviewCount} Visitas</p>
     </div>
   );
 }

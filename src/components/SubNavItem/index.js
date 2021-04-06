@@ -27,7 +27,7 @@ export function SubNavItem({ label, icon, showRightBorder }) {
       <div className="dropdown-menu" id="dropdown-menu4" role="menu">
         <div className="dropdown-content">
           <div className="dropdown-item">
-            <p>saasdasdasfdsadjsafdgasgdfagsdfg</p>
+            <p>Menu</p>
           </div>
         </div>
       </div>

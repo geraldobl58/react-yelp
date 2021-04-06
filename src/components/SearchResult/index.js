@@ -1,29 +1,47 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { BusinessRatting } from '../BusinessRatting';
 
 import styles from './SearchResult.module.css';
 
-export function SearchResult() {
+export function SearchResult({ businesses }) {
+  if (!businesses) {
+    return <div />;
+  }
+
+  const tags = businesses.categories.map((category) => (
+    <span
+      className={`tag ${styles['businesses-tags']}`}
+      key={businesses.id + category.title}
+    >
+      {category.title}
+    </span>
+  ));
+
+  const addressLines = businesses.location.display_address.map(
+    (addressLine) => <p key={businesses.id + addressLine}>{addressLine}</p>
+  );
+
   return (
     <div className={styles['search-result']}>
       <img
         className={styles['businnes-image']}
-        src="https://via.placeholder.com/210"
+        src={businesses.image_url}
         alt="burger"
       />
       <div className={styles['businnes-info']}>
-        <h2 className="subtitle">Burder place</h2>
-        <BusinessRatting />
-        <p>Rating</p>
+        <h2 className="subtitle">{businesses.name}</h2>
+        <BusinessRatting
+          reviewCount={businesses.review_count}
+          rating={businesses.rating}
+        />
         <p>
-          R$<span className="tag">Burgers</span>
-          <span className="tag">Fast Food</span>
+          {businesses.price} {tags}
         </p>
       </div>
       <div className={styles['contact-info']}>
-        <p>11645546657</p>
-        <p>Rua: John Doe</p>
-        <p>343 Vila Rica</p>
+        <p>{businesses.phone}</p>
+        {addressLines}
       </div>
     </div>
   );

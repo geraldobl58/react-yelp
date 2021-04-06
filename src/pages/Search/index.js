@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React from 'react';
 import useReactRouter from 'use-react-router';
 
@@ -18,14 +19,23 @@ export function Search() {
     businesses,
     amountResults,
     searchParams,
-    setSearchParams,
+    performSearch,
   ] = useBusinessSearch(term, locationParams);
+
+  function search(term, location) {
+    performSearch({ term, location });
+  }
 
   return (
     <div>
-      <NavBar term={term} location={locationParams} />
+      <NavBar term={term} location={locationParams} search={search} />
       <SubNav />
-      <SearchResultsSummary term={term} location={locationParams} />
+      <SearchResultsSummary
+        term={searchParams.term}
+        location={searchParams.location}
+        amountResults={amountResults}
+        showResults={businesses ? businesses.length : 0}
+      />
       <SearchResults businesses={businesses} />
     </div>
   );

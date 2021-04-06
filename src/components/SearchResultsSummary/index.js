@@ -3,14 +3,29 @@ import React from 'react';
 
 import styles from './SearchResultsSummary.module.css';
 
-export function SearchResultsSummary({ term, location }) {
+export function SearchResultsSummary({
+  term,
+  location,
+  amountResults,
+  showResults,
+}) {
+  let resultStats = null;
+
+  if (amountResults && showResults) {
+    resultStats = (
+      <p>
+        Mostrando {showResults} de {amountResults} resultados
+      </p>
+    );
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles['search-summary']}>
         <h1 className="subtitle">
           <strong>{term}</strong> {location}
         </h1>
-        <p>Mostrando 1-20 de 534 resultados</p>
+        {resultStats}
       </div>
       <div className={styles.filters}>
         <button type="button" className="button">
